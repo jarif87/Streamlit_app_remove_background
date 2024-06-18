@@ -43,4 +43,7 @@ if my_upload:
     remove_bg(my_upload,threshold,alpha_matting)
 else:
     remove_bg("./images/cat.jpg",threshold,alpha_matting)
+
+st.snow()
+st.balloons()
     
