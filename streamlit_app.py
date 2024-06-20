@@ -3,7 +3,7 @@ from io import BytesIO
 from PIL import Image
 from rembg import remove
 from cartooner import cartoonize
-import numpy as np
+import cv2
 
 st.set_page_config(layout="wide", page_title="Image Background Remover")
 st.write("# Remove Background From Images")
@@ -31,12 +31,10 @@ def remove_bg(my_upload, threshold, alpha_matting):
 
     st.write("# Cartoonize Image")
 
-    # Convert the image to a numpy array for cartoonizing
-    image_np = np.array(image.convert("RGB"))
     # Debugging: print the shape of the image before cartoonizing
-    print("Image shape before cartoonizing:", image_np.shape)
+    print("Image shape before cartoonizing:", image.size)
 
-    cartoon = cartoonize(image_np)
+    cartoon = cartoonize(image)
 
     # Debugging: print the shape of the cartoonized image
     print("Cartoonized image shape:", cartoon.shape)
