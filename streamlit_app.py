@@ -31,10 +31,12 @@ def remove_bg(my_upload, threshold, alpha_matting):
 
     st.write("# Cartoonize Image")
 
+    # Convert the image to a numpy array for cartoonizing
+    image_np = np.array(image.convert("RGB"))
     # Debugging: print the shape of the image before cartoonizing
-    print("Image shape before cartoonizing:", image.size)
+    print("Image shape before cartoonizing:", image_np.shape)
 
-    cartoon = cartoonize(image)
+    cartoon = cartoonize(image_np)
 
     # Debugging: print the shape of the cartoonized image
     print("Cartoonized image shape:", cartoon.shape)
