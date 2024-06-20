@@ -3,7 +3,7 @@ from io import BytesIO
 from PIL import Image
 from rembg import remove
 from cartooner import cartoonize
-import cv2
+import numpy as np
 
 st.set_page_config(layout="wide", page_title="Image Background Remover")
 st.write("# Remove Background From Images")
